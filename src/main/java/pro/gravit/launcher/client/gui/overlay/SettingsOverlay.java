@@ -92,6 +92,7 @@ public class SettingsOverlay extends AbstractOverlay {
         } catch (Throwable e) {
             ramSlider.setMax(2048);
         }
+        ramSlider.setMin(512);
 
         ramSlider.setSnapToTicks(true);
         ramSlider.setShowTickMarks(true);
