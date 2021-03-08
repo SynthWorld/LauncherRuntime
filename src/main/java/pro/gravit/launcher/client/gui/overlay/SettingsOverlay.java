@@ -183,6 +183,6 @@ public class SettingsOverlay extends AbstractOverlay {
     }
     public void updateRamLabel()
     {
-        ramLabel.setText(application.runtimeSettings.ram == 0 ? "Auto" : Integer.toString(application.runtimeSettings.ram).concat(" MiB"));
+        ramLabel.setText(application.runtimeSettings.ram == 512 ? "Auto" : Integer.toString(application.runtimeSettings.ram).concat(" MiB"));
     }
 }
