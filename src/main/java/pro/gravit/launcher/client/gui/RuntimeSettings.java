@@ -1,5 +1,6 @@
 package pro.gravit.launcher.client.gui;
 
+import oshi.SystemInfo;
 import pro.gravit.launcher.LauncherNetworkAPI;
 import pro.gravit.launcher.client.DirBridge;
 import pro.gravit.launcher.client.UserSettings;
@@ -43,7 +44,12 @@ public class RuntimeSettings extends UserSettings {
         runtimeSettings.updatesDir = DirBridge.defaultUpdatesDir;
         runtimeSettings.autoEnter = false;
         runtimeSettings.fullScreen = false;
-        runtimeSettings.ram = 2048;
+        try {
+            SystemInfo systemInfo = new SystemInfo();
+            runtimeSettings.ram = Math.toIntExact(systemInfo.getHardware().getMemory().getTotal() >> 20)/2;
+        } catch (Throwable e) {
+            runtimeSettings.ram = 2048;
+        }
         runtimeSettings.locale = DEFAULT_LOCALE;
         runtimeSettings.disableJavaDownload = false;
         return runtimeSettings;
