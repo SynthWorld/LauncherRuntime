@@ -43,7 +43,7 @@ public class RuntimeSettings extends UserSettings {
         runtimeSettings.updatesDir = DirBridge.defaultUpdatesDir;
         runtimeSettings.autoEnter = false;
         runtimeSettings.fullScreen = false;
-        runtimeSettings.ram = 1024;
+        runtimeSettings.ram = 2048;
         runtimeSettings.locale = DEFAULT_LOCALE;
         runtimeSettings.disableJavaDownload = false;
         return runtimeSettings;
