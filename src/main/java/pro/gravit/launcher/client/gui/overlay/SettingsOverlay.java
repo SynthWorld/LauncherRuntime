@@ -90,7 +90,7 @@ public class SettingsOverlay extends AbstractOverlay {
             SystemInfo systemInfo = new SystemInfo();
             ramSlider.setMax(systemInfo.getHardware().getMemory().getTotal() >> 20);
         } catch (Throwable e) {
-            ramSlider.setMax(2048);
+            ramSlider.setMax(4096);
         }
         ramSlider.setMin(512);
 
