@@ -417,7 +417,7 @@ public class ServerMenuScene extends AbstractScene {
         ClientLauncherProcess clientLauncherProcess = new ClientLauncherProcess(clientDir, assetDir, jvmDir != null ? jvmDir : Paths.get(System.getProperty("java.home")), clientDir.resolve("resourcepacks"), profile, application.runtimeStateMachine.getPlayerProfile(), view,
                 application.runtimeStateMachine.getAccessToken(), clientHDir, assetHDir, jvmHDir);
         clientLauncherProcess.params.ram = application.runtimeSettings.ram;
-        if (clientLauncherProcess.params.ram > 0) {
+        if (clientLauncherProcess.params.ram > 512) {
             clientLauncherProcess.jvmArgs.add("-Xms" + clientLauncherProcess.params.ram + 'M');
             clientLauncherProcess.jvmArgs.add("-Xmx" + clientLauncherProcess.params.ram + 'M');
         }
